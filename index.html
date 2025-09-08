@@ -388,20 +388,30 @@ const animateCounters = () => {
     const target = parseInt(el.dataset.target, 10) || 0;
     const duration = 1400;
     const start = 0;
-    const stepTime = Math.max(Math.floor(duration / (target||1)), 16);
+    const stepTime = Math.max(Math.floor(duration / (target || 1)), 16);
     let current = start;
+
     const tick = () => {
       current += Math.ceil(target / (duration / stepTime));
-      if (current >= target) {
-        el.textContent = target.toLocaleString();
+
+      // Check if this counter needs a dollar sign
+      if (el.closest('.counter-box').querySelector('.label').textContent.includes("Assets")) {
+        // Add dollar sign before the value
+        el.textContent = `$${Math.min(current, target).toLocaleString()}`;
       } else {
-        el.textContent = current.toLocaleString();
+        // Normal counters
+        el.textContent = Math.min(current, target).toLocaleString();
+      }
+
+      if (current < target) {
         setTimeout(tick, stepTime);
       }
     };
+
     tick();
-  });
+  });
 };
+
 
 const countersSection = qs('#counters');
 const checkCountersInView = () => {
@@ -437,6 +447,7 @@ if (yspan) yspan.textContent = new Date().getFullYear();
 
 </body>
 </html>
+
 
 
 

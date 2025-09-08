@@ -381,6 +381,7 @@ window.addEventListener('scroll', onScrollReveal);
 window.addEventListener('load', onScrollReveal);
 
 // COUNTER animation when in view
+let countersStarted = false;
 const counters = Array.from(qsa('.count'));
 const animateCounters = () => {
   counters.forEach(el => {
@@ -447,6 +448,7 @@ if (yspan) yspan.textContent = new Date().getFullYear();
 
 </body>
 </html>
+
 
 
 

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Crypto Ventures</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .contact-hero {
+  position: relative;
+  height: 55vh;
+  background-image: url('assets/images/news.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(5, 5, 5, 0.85));
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR + SIDEBAR -->
+  <!-- SIDEBAR (hidden by default) -->
+  <aside id="siteSidebar" class="sidebar" aria-hidden="true">
+    <div class="sidebar-top">
+      <div class="brand">Jodey Arringstein</div>
+      <button id="sidebarClose" class="btn-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="biography.html" class="nav-link">Biography</a>
+      <a href="investments.html" class="nav-link">Investments</a>
+      <a href="news.html" class="nav-link">News</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="social-small">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/arringsteinjodey?igsh=MXFpeWkxbGRxNTd0OA==" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="navbar">
+  <div class="nav-content">
+    <h1 class="logo">Jodey Arringstein</h1>
+    <button id="sidebarOpen" aria-label="Open Menu">☰</button>
+  </div>
+</header>
+
+  <!-- HERO SECTION -->
+  <section class="contact-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>Let's build the future of blockchain together</p>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section">
+    <iframe 
+      src="https://www.google.com/maps?q=California,USA&output=embed" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2>Get In Touch</h2>
+      <p class="contact-subtitle">Have questions about crypto investments? Send us a message and we'll get back to you.</p>
+      <form id="contactForm" class="crypto-form">
+        <div class="form-grid">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-submit">Send Message</button>
+        <p id="formMessage" class="form-message"></p>
+      </form>
+      <div class="social-links">
+        <a href="https://www.instagram.com/arringsteinjodey?igsh=MXFpeWkxbGRxNTd0OA==" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Jodey Arringstein. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Basic DOM helpers
+const qs = (s) => document.querySelector(s);
+const qsa = (s) => document.querySelectorAll(s);
+
+// SIDEBAR open / close
+const sidebar = qs('#siteSidebar');
+const openBtn = qs('#sidebarOpen');
+const closeBtn = qs('#sidebarClose');
+
+if (openBtn) {
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');
+    sidebar.setAttribute('aria-hidden', 'false');
+    openBtn.setAttribute('aria-expanded','true');
+  });
+}
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  });
+}
+// click outside to close (mobile)
+document.addEventListener('click', (e) => {
+  if (!sidebar.classList.contains('open')) return;
+  if (!sidebar.contains(e.target) && !openBtn.contains(e.target)) {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  }
+});
+
+// FADE-UP reveal on scroll
+const fadeEls = Array.from(qsa('.fade-up'));
+const onScrollReveal = () => {
+  const triggerAt = window.innerHeight * 0.85;
+  fadeEls.forEach(el => {
+    if (el.classList.contains('visible')) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= triggerAt) el.classList.add('visible');
+  });
+};
+window.addEventListener('scroll', onScrollReveal);
+window.addEventListener('load', onScrollReveal);
+
+// COUNTER animation when in view
+let countersStarted = false;
+const counters = Array.from(qsa('.count'));
+const animateCounters = () => {
+  counters.forEach(el => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    const duration = 1400;
+    const start = 0;
+    const stepTime = Math.max(Math.floor(duration / (target||1)), 16);
+    let current = start;
+    const tick = () => {
+      current += Math.ceil(target / (duration / stepTime));
+      if (current >= target) {
+        el.textContent = target.toLocaleString();
+      } else {
+        el.textContent = current.toLocaleString();
+        setTimeout(tick, stepTime);
+      }
+    };
+    tick();
+  });
+};
+
+const countersSection = qs('#counters');
+const checkCountersInView = () => {
+  if (countersStarted) return;
+  if (!countersSection) return;
+  const rect = countersSection.getBoundingClientRect();
+  if (rect.top <= window.innerHeight * 0.85) {
+    countersStarted = true;
+    animateCounters();
+  }
+};
+window.addEventListener('scroll', checkCountersInView);
+window.addEventListener('load', checkCountersInView);
+
+// CONTACT FORM (static demo)
+const form = qs('#contactForm');
+const formMessage = qs('#formMessage');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // demo: show success message and clear fields
+    formMessage.textContent = 'Thanks — your message has been recorded (static demo).';
+    form.reset();
+  });
+}
+// === KEEP YOUR ENTIRE EXISTING CODE ===
+
+// dynamic year in footer
+const yspan = qs('#year');
+if (yspan) yspan.textContent = new Date().getFullYear();
+
+  </script>
+  
+
+</body>
+</html>

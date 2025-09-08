@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jodey Arringstein — Crypto Investor & Innovator</title>
+
+  <!-- Fonts (same as reference) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for social icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Stylish mute/unmute button */
+.mute-btn {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 15;
+}
+
+.mute-btn:hover {
+  background: rgba(255, 140, 0, 0.8);
+  transform: scale(1.1);
+    transform: scale(1.1);
+
+}
+
+
+
+
+/* Make sure video containers are positioned relative */
+.video-card {
+  position: relative;
+}
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR (hidden by default) -->
+  <aside id="siteSidebar" class="sidebar" aria-hidden="true">
+    <div class="sidebar-top">
+      <div class="brand">Jodey Arringstein</div>
+      <button id="sidebarClose" class="btn-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="biography.html" class="nav-link">Biography</a>
+      <a href="investments.html" class="nav-link">Investments</a>
+      <a href="news.html" class="nav-link">News</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="social-small">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/arringsteinjodey?igsh=MXFpeWkxbGRxNTd0OA==" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="navbar">
+  <div class="nav-content">
+    <h1 class="logo">Jodey Arringstein</h1>
+    <button id="sidebarOpen" aria-label="Open Menu">☰</button>
+  </div>
+</header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+  <section id="home" class="hero-section">
+  <!-- background video -->
+ <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+  <source src="assets/videos/workk2.mp4" type="video/mp4">
+</video>
+<button id="heroMuteBtn" class="mute-btn">🔇</button>
+
+
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-left fade-up">
+      <h1 class="hero-title">Shaping the Future of Crypto</h1>
+      <p class="hero-sub">Investor • Visionary • Innovator</p>
+      <div class="hero-ctas">
+        <a class="cta-primary" href="#contact">Get in touch</a>
+        <a class="cta-outline" href="#media">Watch videos</a>
+      </div>
+    </div>
+
+    <!-- REMOVED HERO PORTRAIT IMAGE -->
+  </div>
+</section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section">
+      <div class="container grid-2">
+        <div class="about-text fade-up">
+          <p><strong>Jodey Arringstein</strong> is a Harvard graduate and a Stanford master's graduate, a leading figure in crypto investment and blockchain strategy. He serves on the board of Coinbase and is an investor in the Houston Dynamo football club. Jodey's focus is on bridging Web3 and mainstream business through strategic investments and product design, and has managed assets worth over $100 Million. A century of assets management</p>
+          <p>College: <strong>Harvard University</strong><br>Masters: <strong>Stanford University</strong></p>
+        </div>
+        <div class="about-media fade-up delay-1">
+          <img src="assets/images/image2.jpg" alt="photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTMENTS / INITIATIVES -->
+    <section id="investments" class="section dark-section">
+      <div class="container">
+        <h3 class="section-title fade-up">Investments & Initiatives</h3>
+
+        <div class="cards grid-3">
+          <article class="card fade-up delay-0">
+            <div class="card-media"><img src="assets/images/coinbase.jpg" alt="Coinbase"></div>
+            <h4>Coinbase</h4>
+            <p>Board member — strategic advisor shaping the exchange's future.</p>
+          </article>
+
+          <article class="card fade-up delay-1">
+            <div class="card-media"><img src="assets/images/house1.jpg" alt="Houston Dynamo"></div>
+            <h4>Houston Dynamo</h4>
+            <p>Investor — driving innovation in sports & fan engagement with blockchain.</p>
+          </article>
+
+          <article class="card fade-up delay-2">
+            <div class="card-media"><img src="assets/images/ventures.jpg" alt="Blockchain ventures"></div>
+            <h4>Blockchain Ventures</h4>
+            <p>Early-stage investments across DeFi, infrastructure, and Web3 apps.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section id="counters" class="section counters-section">
+      <div class="container counters-inner">
+        <div class="counter-box fade-up">
+          <div class="count" data-target="30">0</div>
+          <div class="label">Years of Business</div>
+        </div>
+        <div class="counter-box fade-up delay-1">
+          <div class="count" data-target="50">0</div>
+          <div class="label">Partnerships</div>
+        </div>
+        <div class="counter-box fade-up delay-2">
+          <div class="count" data-target="12">0</div>
+          <div class="label">Major Investments</div>
+        </div>
+        <div class="counter-box fade-up delay-3">
+          <div class="count" data-target="200">0</div>
+          <div class="label">Team & Partners</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA / VIDEO GALLERY -->
+    <section id="media" class="section media-section">
+      <div class="container">
+        <h3 class="section-title fade-up">Media & Video</h3>
+
+        <div class="media-grid grid-2">
+          <div class="video-card fade-up">
+  <video id="mediaVideo1" class="media-video" autoplay muted loop playsinline poster="assets/images/video1-poster.jpg">
+    <source src="assets/videos/work1.mp4" type="video/mp4">
+  </video>
+  <button id="mediaMuteBtn1" class="mute-btn">🔇</button>
+  <h4>Keynote — Decentralized Finance</h4>
+  <p>Short description of the talk / interview.</p>
+</div>
+
+<div class="video-card fade-up delay-1">
+  <video id="mediaVideo2" class="media-video" autoplay muted loop playsinline poster="assets/images/video2-poster.jpg">
+    <source src="assets/videos/workk2.mp4" type="video/mp4">
+  </video>
+  <button id="mediaMuteBtn2" class="mute-btn">🔇</button>
+  <h4>Interview — Crypto Adoption</h4>
+  <p>Short description of the interview.</p>
+</div>
+
+
+      </div>
+    </section>
+
+    <!-- NEWS / PRESS PREVIEW -->
+    <section id="news" class="section dark-section">
+      <div class="container">
+        <h3 class="section-title fade-up">News & Press</h3>
+
+        <div class="news-grid grid-3">
+          <article class="news-card fade-up">
+            <img src="assets/images/news1.jpg" alt="">
+            <h4>Jodey joins Coinbase Board</h4>
+            <p>Short excerpt about the press item or article.</p>
+          </article>
+
+          <article class="news-card fade-up delay-1">
+            <img src="assets/images/news2.jpg" alt="">
+            <h4>Houston Dynamo & Blockchain</h4>
+            <p>Short excerpt about sports & crypto initiative.</p>
+          </article>
+
+          <article class="news-card fade-up delay-2">
+            <img src="assets/images/news3.jpg" alt="">
+            <h4>Stanford Lecture on DeFi</h4>
+            <p>Short excerpt about his lecture or panel discussion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-inner fade-up">
+        <div class="contact-grid grid-2">
+          <div class="contact-info">
+            <h3>Contact</h3>
+            <p style="color: black;" >For speaking engagements, partnerships, or press inquiries, reach out.</p>
+
+            <ul style="color: black;"  class="credentials">
+              <li><strong>College:</strong> Harvard University</li>
+              <li><strong>Masters:</strong> Stanford University</li>
+              <li><strong>Board:</strong> Coinbase</li>
+              <li><strong>Team:</strong> Houston Dynamo</li>
+            </ul>
+
+            <div style="color: black;"  class="social-large">
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/arringsteinjodey?igsh=MXFpeWkxbGRxNTd0OA==" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap">
+            <!-- Note: static frontend form - replace action with backend when ready -->
+            <form id="contactForm" class="contact-form" action="#" method="POST">
+              <label><input name="name" type="text" placeholder="Your name" required></label>
+              <label><input name="email" type="email" placeholder="Your email" required></label>
+              <label><textarea name="message" placeholder="Your message" rows="6" required></textarea></label>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Send message</button>
+              </div>
+              <div id="formMessage" class="form-message" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-footer">Jodey Arringstein</div>
+        <small>© <span id="year"></span> Jodey Arringstein. All rights reserved.</small>
+      </div>
+
+      <div class="footer-right">
+        <div class="social">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/arringsteinjodey?igsh=MXFpeWkxbGRxNTd0OA==" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+// === HERO VIDEO ===
+const heroVideo = document.getElementById("heroVideo");
+const heroMuteBtn = document.getElementById("heroMuteBtn");
+
+if (heroVideo && heroMuteBtn) {
+  heroMuteBtn.addEventListener("click", () => {
+    heroVideo.muted = !heroVideo.muted;
+    heroMuteBtn.textContent = heroVideo.muted ? "🔇" : "🔊";
+  });
+}
+
+// === MEDIA VIDEO 1 ===
+const mediaVideo1 = document.getElementById("mediaVideo1");
+const mediaMuteBtn1 = document.getElementById("mediaMuteBtn1");
+
+if (mediaVideo1 && mediaMuteBtn1) {
+  mediaMuteBtn1.addEventListener("click", () => {
+    mediaVideo1.muted = !mediaVideo1.muted;
+    mediaMuteBtn1.textContent = mediaVideo1.muted ? "🔇" : "🔊";
+  });
+}
+
+// === MEDIA VIDEO 2 ===
+const mediaVideo2 = document.getElementById("mediaVideo2");
+const mediaMuteBtn2 = document.getElementById("mediaMuteBtn2");
+
+if (mediaVideo2 && mediaMuteBtn2) {
+  mediaMuteBtn2.addEventListener("click", () => {
+    mediaVideo2.muted = !mediaVideo2.muted;
+    mediaMuteBtn2.textContent = mediaVideo2.muted ? "🔇" : "🔊";
+  });
+}
+</script>
+
+
+
+  <script>
+    // Basic DOM helpers
+const qs = (s) => document.querySelector(s);
+const qsa = (s) => document.querySelectorAll(s);
+
+// SIDEBAR open / close
+const sidebar = qs('#siteSidebar');
+const openBtn = qs('#sidebarOpen');
+const closeBtn = qs('#sidebarClose');
+
+if (openBtn) {
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');
+    sidebar.setAttribute('aria-hidden', 'false');
+    openBtn.setAttribute('aria-expanded','true');
+  });
+}
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  });
+}
+// click outside to close (mobile)
+document.addEventListener('click', (e) => {
+  if (!sidebar.classList.contains('open')) return;
+  if (!sidebar.contains(e.target) && !openBtn.contains(e.target)) {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  }
+});
+
+// FADE-UP reveal on scroll
+const fadeEls = Array.from(qsa('.fade-up'));
+const onScrollReveal = () => {
+  const triggerAt = window.innerHeight * 0.85;
+  fadeEls.forEach(el => {
+    if (el.classList.contains('visible')) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= triggerAt) el.classList.add('visible');
+  });
+};
+window.addEventListener('scroll', onScrollReveal);
+window.addEventListener('load', onScrollReveal);
+
+// COUNTER animation when in view
+let countersStarted = false;
+const counters = Array.from(qsa('.count'));
+const animateCounters = () => {
+  counters.forEach(el => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    const duration = 1400;
+    const start = 0;
+    const stepTime = Math.max(Math.floor(duration / (target||1)), 16);
+    let current = start;
+    const tick = () => {
+      current += Math.ceil(target / (duration / stepTime));
+      if (current >= target) {
+        el.textContent = target.toLocaleString();
+      } else {
+        el.textContent = current.toLocaleString();
+        setTimeout(tick, stepTime);
+      }
+    };
+    tick();
+  });
+};
+
+const countersSection = qs('#counters');
+const checkCountersInView = () => {
+  if (countersStarted) return;
+  if (!countersSection) return;
+  const rect = countersSection.getBoundingClientRect();
+  if (rect.top <= window.innerHeight * 0.85) {
+    countersStarted = true;
+    animateCounters();
+  }
+};
+window.addEventListener('scroll', checkCountersInView);
+window.addEventListener('load', checkCountersInView);
+
+// CONTACT FORM (static demo)
+const form = qs('#contactForm');
+const formMessage = qs('#formMessage');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // demo: show success message and clear fields
+    formMessage.textContent = 'Thanks — your message has been recorded (static demo).';
+    form.reset();
+  });
+}
+// === KEEP YOUR ENTIRE EXISTING CODE ===
+
+// dynamic year in footer
+const yspan = qs('#year');
+if (yspan) yspan.textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

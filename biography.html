@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biography | Jodey Arringstein</title>
+   <!-- Fonts (same as reference) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for social icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-content">
+      <h1 class="logo">Jodey Arringstein</h1>
+      <button id="sidebarOpen" aria-label="Open Menu">☰</button>
+    </div>
+  </header>
+
+   <!-- SIDEBAR (hidden by default) -->
+  <aside id="siteSidebar" class="sidebar" aria-hidden="true">
+    <div class="sidebar-top">
+      <div class="brand">Jodey Arringstein</div>
+      <button id="sidebarClose" class="btn-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="biography.html" class="nav-link">Biography</a>
+      <a href="investments.html" class="nav-link">Investments</a>
+      
+      <a href="news.html" class="nav-link">News</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="social-small">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/arringsteinjodey?igsh=MXFpeWkxbGRxNTd0OA==" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <section class="bio-hero">
+    <img src="assets/images/image2.jpg" alt="Biography of Jodey Arringstein">
+    <div class="bio-overlay">
+      <h1>Biography</h1>
+      <p>The story of vision, leadership, and innovation.</p>
+    </div>
+  </section>
+
+  <!-- BIOGRAPHY CONTENT -->
+  <section class="bio-content">
+    <div class="bio-wrapper fade-up">
+      <h2>Early Life & Vision</h2>
+      <p>
+        Jodey Arringstein, born into a modest family, grew up with an 
+        unshakable curiosity and a passion for creating impactful change.
+        From his early days, he envisioned a future where technology and
+        innovation could transform economies and empower millions of people.
+      </p>
+      <p>
+        Inspired by global pioneers, Jodey committed himself to redefining 
+        the boundaries of what’s possible. His journey is one of 
+        determination, resilience, and a relentless drive to achieve
+        excellence.
+      </p>
+    </div>
+
+    <!-- IMAGE SECTION -->
+    
+
+    <div class="bio-wrapper fade-up">
+      <h2>Entrepreneurial Journey</h2>
+      <p>
+        Today, Jodey stands as one of the most influential business leaders 
+        in the crypto and tech sectors. As a board member of 
+        <strong>Coinbase</strong> and a strategic investor in multiple 
+        high-growth startups, he has shaped the digital landscape while 
+        supporting disruptive ideas that have revolutionized industries.
+      </p>
+      <p>
+        His investments span across fintech, AI, and blockchain solutions, 
+        reflecting his belief in a decentralized, technology-driven future.
+        Every step of his career reflects a calculated approach, driven by 
+        vision and long-term impact rather than short-term gains.
+      </p>
+    </div>
+
+    <!-- IMAGE SECTION -->
+    <div class="bio-image fade-up">
+      <img src="assets/images/image1.jpg" alt="Jodey Arringstein Leadership">
+    </div>
+
+    <div class="bio-wrapper fade-up">
+      <h2>Philosophy & Values</h2>
+      <p>
+        Jodey believes that success is not only defined by wealth but also 
+        by the ability to inspire and create opportunities for others. He 
+        has devoted significant resources to educational programs and 
+        mentorship initiatives, empowering young innovators to bring their 
+        visions to life.
+      </p>
+      <p>
+        For Jodey, leadership is about responsibility — the responsibility 
+        to inspire, uplift, and shape a better future.
+      </p>
+    </div>
+  </section>
+
+  <!-- QUOTE SECTION -->
+  <section class="bio-quote fade-up">
+    <blockquote>
+      "Innovation is not just about building businesses.  
+      It’s about shaping a better future for generations to come."
+    </blockquote>
+    <cite>— Jodey Arringstein</cite>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="bio-contact fade-up">
+    <h2>Let’s Connect</h2>
+    <p>For collaborations, investments, or speaking engagements, reach out directly.</p>
+    <a href="contact.html" class="btn">Contact Me</a>
+  </section>
+
+ 
+    <script>
+    // Basic DOM helpers
+const qs = (s) => document.querySelector(s);
+const qsa = (s) => document.querySelectorAll(s);
+
+// SIDEBAR open / close
+const sidebar = qs('#siteSidebar');
+const openBtn = qs('#sidebarOpen');
+const closeBtn = qs('#sidebarClose');
+
+if (openBtn) {
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');
+    sidebar.setAttribute('aria-hidden', 'false');
+    openBtn.setAttribute('aria-expanded','true');
+  });
+}
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  });
+}
+// click outside to close (mobile)
+document.addEventListener('click', (e) => {
+  if (!sidebar.classList.contains('open')) return;
+  if (!sidebar.contains(e.target) && !openBtn.contains(e.target)) {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  }
+});
+
+// FADE-UP reveal on scroll
+const fadeEls = Array.from(qsa('.fade-up'));
+const onScrollReveal = () => {
+  const triggerAt = window.innerHeight * 0.85;
+  fadeEls.forEach(el => {
+    if (el.classList.contains('visible')) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= triggerAt) el.classList.add('visible');
+  });
+};
+window.addEventListener('scroll', onScrollReveal);
+window.addEventListener('load', onScrollReveal);
+
+// COUNTER animation when in view
+let countersStarted = false;
+const counters = Array.from(qsa('.count'));
+const animateCounters = () => {
+  counters.forEach(el => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    const duration = 1400;
+    const start = 0;
+    const stepTime = Math.max(Math.floor(duration / (target||1)), 16);
+    let current = start;
+    const tick = () => {
+      current += Math.ceil(target / (duration / stepTime));
+      if (current >= target) {
+        el.textContent = target.toLocaleString();
+      } else {
+        el.textContent = current.toLocaleString();
+        setTimeout(tick, stepTime);
+      }
+    };
+    tick();
+  });
+};
+
+const countersSection = qs('#counters');
+const checkCountersInView = () => {
+  if (countersStarted) return;
+  if (!countersSection) return;
+  const rect = countersSection.getBoundingClientRect();
+  if (rect.top <= window.innerHeight * 0.85) {
+    countersStarted = true;
+    animateCounters();
+  }
+};
+window.addEventListener('scroll', checkCountersInView);
+window.addEventListener('load', checkCountersInView);
+
+// CONTACT FORM (static demo)
+const form = qs('#contactForm');
+const formMessage = qs('#formMessage');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // demo: show success message and clear fields
+    formMessage.textContent = 'Thanks — your message has been recorded (static demo).';
+    form.reset();
+  });
+}
+// === KEEP YOUR ENTIRE EXISTING CODE ===
+
+// VIDEO MUTE / UNMUTE
+const video = document.querySelector('video'); // target hero video
+const muteBtn = document.getElementById('muteBtn');
+
+if (video && muteBtn) {
+  muteBtn.addEventListener('click', () => {
+    video.muted = !video.muted;
+    muteBtn.textContent = video.muted ? '🔇' : '🔊';
+  });
+}
+// dynamic year in footer
+const yspan = qs('#year');
+if (yspan) yspan.textContent = new Date().getFullYear();
+
+  </script>
+
+ <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year"></span> Jodey Arringstein. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+

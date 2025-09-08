@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investments | Jodey Arringstein</title>
+   <!-- Fonts (same as reference) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for social icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Navbar & Sidebar (same as homepage) -->
+  <!-- SIDEBAR (hidden by default) -->
+  <aside id="siteSidebar" class="sidebar" aria-hidden="true">
+    <div class="sidebar-top">
+      <div class="brand">Jodey Arringstein</div>
+      <button id="sidebarClose" class="btn-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="biography.html" class="nav-link">Biography</a>
+      <a href="investments.html" class="nav-link">Investments</a>
+      
+      <a href="news.html" class="nav-link">News</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="social-small">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/arringsteinjodey?igsh=MXFpeWkxbGRxNTd0OA==" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+    <!-- HEADER -->
+  <header class="navbar">
+  <div class="nav-content">
+    <h1 class="logo">Jodey Arringstein</h1>
+    <button id="sidebarOpen" aria-label="Open Menu">☰</button>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section class="inv-hero">
+    <img src="assets/images/invest.jpg" alt="Investments">
+    <div class="inv-overlay">
+      <h1>Investments & Initiatives</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="inv-intro fade-up">
+    <div class="container">
+      <p>
+        From strategic board roles to pioneering investments in emerging sectors, Jodey Arringstein continues to shape the future of web3, fintech, and global business leadership.
+      </p>
+    </div>
+  </section>
+
+  <!-- INVESTMENT CARDS -->
+  <section class="inv-cards fade-up">
+    <div class="container grid-3">
+      <div class="card">
+        <img src="assets/images/coinbase.jpg" alt="Coinbase">
+        <h3>Coinbase</h3>
+        <p>Board member contributing to long-term strategic direction of the leading crypto exchange.</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/house.jpg" alt="Houston Dynamo">
+        <h3>Houston Dynamo</h3>
+        <p>Investor—merging sport and tech to explore blockchain-based fan experiences.</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/ventures.jpg" alt="Blockchain Ventures">
+        <h3>Blockchain Ventures</h3>
+        <p>Early–stage investments in DeFi, NFT infrastructure, and next generation protocols.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL SECTIONS -->
+  <section class="inv-detail fade-up">
+    <div class="container">
+      <div class="detail-block">
+        <div class="text">
+          <h2>Guiding Decisions at Coinbase</h2>
+          <p>As a board member, Jodey partners closely with leadership to foster innovation, global expansion, and institutional trust in crypto.</p>
+        </div>
+        <div class="image">
+          <img src="assets/images/image1.jpg" alt="Boardroom">
+        </div>
+      </div>
+      <div class="detail-block reverse">
+        <div class="text">
+          <h2>Investing in Sports & Innovation</h2>
+          <p>Combining the passion of sports ownership with the power of blockchain and NFT applications, Jodey’s investments push boundaries beyond finance.</p>
+        </div>
+        <div class="image">
+          <img src="assets/images/invest3.jpg" alt="Sports & Tech">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="inv-cta fade-up">
+    <div class="container">
+      <p>Interested in learning more about my approach to investing?</p>
+      <a href="contact.html" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- ... -->
+       <script>
+    // Basic DOM helpers
+const qs = (s) => document.querySelector(s);
+const qsa = (s) => document.querySelectorAll(s);
+
+// SIDEBAR open / close
+const sidebar = qs('#siteSidebar');
+const openBtn = qs('#sidebarOpen');
+const closeBtn = qs('#sidebarClose');
+
+if (openBtn) {
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');
+    sidebar.setAttribute('aria-hidden', 'false');
+    openBtn.setAttribute('aria-expanded','true');
+  });
+}
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  });
+}
+// click outside to close (mobile)
+document.addEventListener('click', (e) => {
+  if (!sidebar.classList.contains('open')) return;
+  if (!sidebar.contains(e.target) && !openBtn.contains(e.target)) {
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    openBtn.setAttribute('aria-expanded','false');
+  }
+});
+
+// FADE-UP reveal on scroll
+const fadeEls = Array.from(qsa('.fade-up'));
+const onScrollReveal = () => {
+  const triggerAt = window.innerHeight * 0.85;
+  fadeEls.forEach(el => {
+    if (el.classList.contains('visible')) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= triggerAt) el.classList.add('visible');
+  });
+};
+window.addEventListener('scroll', onScrollReveal);
+window.addEventListener('load', onScrollReveal);
+
+// COUNTER animation when in view
+let countersStarted = false;
+const counters = Array.from(qsa('.count'));
+const animateCounters = () => {
+  counters.forEach(el => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    const duration = 1400;
+    const start = 0;
+    const stepTime = Math.max(Math.floor(duration / (target||1)), 16);
+    let current = start;
+    const tick = () => {
+      current += Math.ceil(target / (duration / stepTime));
+      if (current >= target) {
+        el.textContent = target.toLocaleString();
+      } else {
+        el.textContent = current.toLocaleString();
+        setTimeout(tick, stepTime);
+      }
+    };
+    tick();
+  });
+};
+
+const countersSection = qs('#counters');
+const checkCountersInView = () => {
+  if (countersStarted) return;
+  if (!countersSection) return;
+  const rect = countersSection.getBoundingClientRect();
+  if (rect.top <= window.innerHeight * 0.85) {
+    countersStarted = true;
+    animateCounters();
+  }
+};
+window.addEventListener('scroll', checkCountersInView);
+window.addEventListener('load', checkCountersInView);
+
+// CONTACT FORM (static demo)
+const form = qs('#contactForm');
+const formMessage = qs('#formMessage');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // demo: show success message and clear fields
+    formMessage.textContent = 'Thanks — your message has been recorded (static demo).';
+    form.reset();
+  });
+}
+// === KEEP YOUR ENTIRE EXISTING CODE ===
+
+// VIDEO MUTE / UNMUTE
+const video = document.querySelector('video'); // target hero video
+const muteBtn = document.getElementById('muteBtn');
+
+if (video && muteBtn) {
+  muteBtn.addEventListener('click', () => {
+    video.muted = !video.muted;
+    muteBtn.textContent = video.muted ? '🔇' : '🔊';
+  });
+}
+// dynamic year in footer
+const yspan = qs('#year');
+if (yspan) yspan.textContent = new Date().getFullYear();
+
+  </script>
+
+ <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year"></span> Jodey Arringstein. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

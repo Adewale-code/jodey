@@ -159,7 +159,7 @@ he received a Master of Business Administration degree from Stanford University
     <section id="counters" class="section counters-section">
       <div class="container counters-inner">
         <div class="counter-box fade-up">
-          <div class="count" data-target="150">0</div><span class="suffix">M</span>
+          <div class="count" data-target="150">0</div>
           <div class="label">Assets Management</div>
         </div>
         <div class="counter-box fade-up delay-1">
@@ -377,6 +377,7 @@ window.addEventListener('load', onScrollReveal);
 // COUNTER animation when in view
 let countersStarted = false;
 const counters = Array.from(qsa('.count'));
+
 const animateCounters = () => {
   counters.forEach(el => {
     const target = parseInt(el.dataset.target, 10) || 0;
@@ -388,10 +389,10 @@ const animateCounters = () => {
     const tick = () => {
       current += Math.ceil(target / (duration / stepTime));
 
-      // Check if this counter needs a dollar sign
+      // Check if this counter is for Assets Management
       if (el.closest('.counter-box').querySelector('.label').textContent.includes("Assets")) {
-        // Add dollar sign before the value
-        el.textContent = `$${Math.min(current, target).toLocaleString()}`;
+        // Animate with $ and add 'M' at the end
+        el.textContent = `$${Math.min(current, target).toLocaleString()}M`;
       } else {
         // Normal counters
         el.textContent = Math.min(current, target).toLocaleString();
@@ -405,6 +406,7 @@ const animateCounters = () => {
     tick();
   });
 };
+
 
 
 
@@ -442,6 +444,7 @@ if (yspan) yspan.textContent = new Date().getFullYear();
 
 </body>
 </html>
+
 
 
 
